@@ -1,0 +1,54 @@
+<DOCTYPE html>
+    <html Lang="en">
+     <head>
+         <title>Journal blog L</title>
+         <link rel="stylesheet" href="/css.css">
+    </head>
+    <body>
+        <div class="main">
+            <div class="navbar">
+                <div class="icon">
+                    <span class="logo">tell us what you think </span> 
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="/">HOME</a></li>
+                        <li><a href="/login">LOGIN</a></li>
+                    </ul>
+                </div>
+            </div>
+
+             <main id="mainContentFront">
+                <h1>Blog Posts</h1>
+                {{#if isMember}}
+                    {{#each posts}}
+                        <div class="article">
+                                <a href="/posts/{{url}}/{{id}}">{{title}} - {{creationDate}}</a>
+                        </div>
+                    {{/each}}
+                {{else}}
+                    {{#each posts}}
+                        <div class="article">
+                            {{#if private}}
+                                {{title}} - {{creationDate}} <b style="color:red">Private</b>
+                            {{else}}
+                                    <a href="/posts/{{url}}/{{id}}">{{title}} - {{creationDate}}</a>
+                            {{/if}}
+                        </div>
+                    {{/each}}
+                {{/if}}
+            </main>
+        </div>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-W8GZ25PBYQ"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-W8GZ25PBYQ');
+        </script>
+    </body>
+    </html>
+    

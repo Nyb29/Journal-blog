@@ -1,0 +1,42 @@
+<DOCTYPE html>
+    <html Lang="en">
+     <head>
+         <title>Journal blog | Admin - Create Post</title>
+         <link rel="stylesheet" href="/css.css">
+    </head>
+    <body>
+        <div class="main">
+            <div class="navbar">
+                <div class="icon">
+                    <span class="logo">tell us what you think </span> 
+                </div>
+               <div class="menu">
+                    <ul>
+                        <li><a href="/">HOME</a></li>
+                        <li><a href="/admin/all-post">All Posts</a></li>
+                        <li><a href="/admin/create-post">Create Post</a></li>
+                    </ul>
+                </div>
+            </div>
+
+              <main id="mainContentFront">
+                <h1>Create Post</h1><br>
+                <!--  enctype="multipart/form-data" needed to be able to manage upload of files -->
+                <form action="/admin/create-post" method="post">
+                    <label>Title</label> <input type="text" name="title" required><br>
+                    <label>Url</label> <input type="text" name="url" required><br><br><br>
+                    <label>Body</label>
+                    <textarea name="body"></textarea><br><br>
+                    <label>Is Private</label> 
+                    <select name="private">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                    <br>
+                    <input type="submit" value="Add"> 
+                </form>
+            </main>
+        </div>
+    </body>
+    </html>
+    

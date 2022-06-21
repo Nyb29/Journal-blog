@@ -1,0 +1,45 @@
+<DOCTYPE html>
+    <html Lang="en">
+     <head>
+         <title>Journal blog | Admin - Create Post</title>
+         <link rel="stylesheet" href="/css.css">
+    </head>
+    <body>
+        <div class="main">
+            <div class="navbar">
+                <div class="icon">
+                    <span class="logo">tell us what you think </span> 
+                </div>
+               <div class="menu">
+                    <ul>
+                        <li><a href="/">HOME</a></li>
+                        <li><a href="/admin/all-post">All Posts</a></li>
+                        <li><a href="/admin/create-post">Create Post</a></li>
+                    </ul>
+                </div>
+            </div>
+
+              <main id="mainContentFront">
+                <h1>Edit Post</h1><br>
+                <form action="/admin/edit-post-data" method="post">
+                    <label>Title</label> <input type="text" name="title" value="{{post.title}}" required><br>
+                    <label>Url</label> <input type="text" name="url"  value="{{post.url}}" required><br>
+                    <label>Body</label>
+                    <textarea name="body">{{post.body}}</textarea><br><br>
+                    <input type="submit" value="Update"> 
+                </form>
+
+                <div style="margin-top: 40px; background: rgb(184, 181, 181); padding: 20px;">
+                    <h2 style="margin-bottom: 20px;">Upload Post Files</h2>
+                    <form action="/admin/upload-post-file/{{post.id}}" method="post" enctype="multipart/form-data">
+                        <label>Image</label> <input type="file" name="image"><br>
+                        <label>Video</label> <input type="file" name="video"><br>
+                        <label>Audio</label> <input type="file" name="audio"><br>
+                        <input type="submit" value="Upload"> 
+                    </form>
+                </div>
+            </main>
+        </div>
+    </body>
+    </html>
+    

@@ -1,0 +1,36 @@
+<DOCTYPE html>
+    <html Lang="en">
+     <head>
+         <title>Journal blog | Post</title>
+         <link rel="stylesheet" href="/css.css">
+    </head>
+    <body>
+        <div class="main">
+            <div class="navbar">
+                <div class="icon">
+                    <span class="logo">tell us what you think </span> 
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="/">HOME</a></li>
+                        <li><a href="/login">LOGIN</a></li>
+                    </ul>
+                </div>
+            </div>
+
+              <main id="mainContentFront">
+                <h1>{{post.title}}</h1>
+                <span>{{post.creationDate}}</span>
+                <p>{{post.body}}</p>
+
+              <div style="background: rgba(26, 26, 151, 0.733); padding: 30px; margin-top: 20px;">
+                <h2>Media</h2>
+                {{#each postFiles}}
+                   <a href="{{../dir}}{{this}}">{{this}}</a><br>
+                {{/each}}
+               </div>
+            </main>
+        </div>
+    </body>
+    </html>
+    

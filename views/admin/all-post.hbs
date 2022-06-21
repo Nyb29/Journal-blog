@@ -1,0 +1,48 @@
+<DOCTYPE html>
+    <html Lang="en">
+     <head>
+         <title>Journal blog | Admin - All Posts</title>
+         <link rel="stylesheet" href="/css.css">
+    </head>
+    <body>
+        <div class="main">
+            <div class="navbar">
+                <div class="icon">
+                    <span class="logo">tell us what you think </span> 
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="/">HOME</a></li>
+                        <li><a href="/admin/all-post">All Posts</a></li>
+                        <li><a href="/admin/create-post">Create Post</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <main id="mainContentFront">
+                <h1>Admin | All Posts</h1><br><br>
+                <style>
+                    #headingRow{ font-weight: bold; }
+                </style>
+                <table>
+                    <tr id="headingRow">
+                        <td>Title</td>
+                        <td>Date</td>
+                        <td>Action</td>
+                    </tr>
+                    {{#each posts}}
+                    <tr>
+                        <td>{{title}}</td>
+                        <td>{{creationDate}}</td>
+                        <td>
+                            <button><a href="/admin/edit-post/{{id}}">Edit</a></button><br>
+                            <button><a href="/admin/delete-post/{{id}}">Delete</a></button>
+                        </td>
+                    </tr>
+                     {{/each}}
+                </table>
+            </main>
+        </div>
+    </body>
+    </html>
+    
